@@ -1,0 +1,40 @@
+:host {
+  .list-file {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .left-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      .table-wrap {
+        width: 100%;
+        .file {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+    .right-side {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  table {
+    width: 100%;
+  }
+  .goto {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  .color-wht {
+    color: white !important;
+  }
+
+  .svg-icon.svg-icon-primary.color-wht svg g [fill] {
+    fill: white !important;
+  }
+}
