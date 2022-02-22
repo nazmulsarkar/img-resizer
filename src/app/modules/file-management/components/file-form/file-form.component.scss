@@ -1,0 +1,26 @@
+:host {
+  form {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  // .ad-image {
+  //   form {
+  //     height: 100vh;
+  //   }
+  // }
+  .dashed {
+    border: 2px dashed #cacaca;
+  }
+
+  // .upload-actions {
+  //   .mat-spinner {
+  //     width: 40px !important;
+  //     height: 40px !important;
+  //     svg {
+  //       width: 40px !important;
+  //       height: 40px !important;
+  //     }
+  //   }
+  // }
+}

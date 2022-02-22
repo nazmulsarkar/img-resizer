@@ -1,0 +1,49 @@
+<div class="w-full max-w-xs file-form">
+    <div class="row">
+        <div class="file-data col-md-6 col-lg-6 col-xxl-6 col-sm-12">
+        </div>
+        <div class="file-image col-md-6 col-lg-6 col-xxl-6 col-sm-12">
+            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto" [formGroup]="uploadForm"
+                multiple="multiple">
+                <h3>Upload File(s)</h3>
+                <hr>
+                <div class="row mt-12">
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" name="files" class="custom-file-input" (change)="onFilesChange($event)"
+                                multiple>
+                            <label class="custom-file-label" for="inputGroupFile04">Choose file(s)</label>
+                        </div>
+                    </div>
+
+                    <br>
+                    <p class="mt-0 text-danger"><small><strong>* You must upload an image while uploading an
+                                file!</strong><strong style="display: block;">* Supported images - PNG, JPEG,
+                                JPG!</strong><strong style="display: block;">* Max. size limit - 5 MB!</strong>
+                        </small>
+                    </p>
+                </div>
+
+                <div class="row mb-8">
+
+                </div>
+
+
+                <div class="row input-group upload-actions">
+                    <div class="col-md-6 col-lg-6 col-xxl-6 col-sm-12">
+                        <button class="btn btn-primary" mat-raised-button color="primary" type="button"
+                            (click)="startUpload()" [disabled]="!filesToUpload || (loading | async)">Start
+                            upload
+                        </button>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xxl-6 col-sm-12 text-right">
+                        <div class="spinner-container" *ngIf="loading | async">
+                            <mat-spinner class="mx-auto" [diameter]="40"></mat-spinner>
+                            <span style="display: block; text-align: center;">Uploading going on...</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
