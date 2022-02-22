@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/file-management/file-management.module').then((m) => m.FileManagementModule),
+  },
+  {
+    path: 'error',
+    loadChildren: () =>
+      import('./modules/errors/errors.module').then((m) => m.ErrorsModule),
+  },
+  { path: '**', redirectTo: 'error/404' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
