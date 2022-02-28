@@ -20,7 +20,7 @@ import {
   delay,
 } from 'rxjs/operators';
 import { MatSort } from '@angular/material/sort';
-import { IQueryParamsFile } from '../../models/file.model';
+import { FileModel, IQueryParamsFile } from '../../models/file.model';
 
 @Component({
   selector: 'app-file-list',
@@ -38,7 +38,7 @@ export class FileListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   displayedColumns: string[] = [
     'name',
-    'url',
+    // 'url',
     'created',
     'actions',
   ];
@@ -80,8 +80,9 @@ export class FileListComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dataSource.loadFiles(this.filter);
   };
 
-  gotoEdit = (id: string) => {
-    this.router.navigate(['file-management', 'edit', id]);
+  downloadFile = (file: FileModel) => {
+    const fileUrl = file.url;
+    window.open(fileUrl)
   };
 
   gotoCreate = () => {
